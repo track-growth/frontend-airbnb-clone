@@ -1,6 +1,8 @@
 /**
  * @file SignUpForm.tsx
  * @description 회원가입 form UI component
+ * - react-hook-form을 사용하여 form 상태를 관리합니다.
+ * - zodResolver를 사용하여 form 유효성 검사를 수행합니다.
  */
 
 import { useForm } from 'react-hook-form';
@@ -13,8 +15,11 @@ import { signUpSchema, type SignUpFormData, useSignUp } from '@/entities/user';
 export const SignUpForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
   // NOTE: react-hook-form 사용해서 form 상태 관리
   const {
+    // NOTE: form 상태 관리 함수
     register,
+    // NOTE: form 제출 함수
     handleSubmit,
+    // NOTE: form 상태 관리 함수
     formState: { errors, isSubmitting },
   } = useForm<SignUpFormData>({
     resolver: zodResolver(signUpSchema),
@@ -24,6 +29,8 @@ export const SignUpForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
   const { signUpMutation, onSubmitSignUpForm } = useSignUp();
 
   return (
+    // NOTE: form 제출 시 onSubmitSignUpForm 함수 호출 (useForm의 handleSubmit 함수 props로 받은 data를 전달)
+    // - data: form 제출 시 입력된 데이터
     <form
       onSubmit={handleSubmit(data => onSubmitSignUpForm(data, closeModalFn))}
       className="flex flex-col gap-4 mt-6"
@@ -60,6 +67,7 @@ export const SignUpForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
         {...register('confirmPassword')}
       />
 
+      {/* NOTE: 회원가입 버튼 */}
       <button
         type="submit"
         disabled={isSubmitting || signUpMutation.isPending}
@@ -68,6 +76,7 @@ export const SignUpForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
         {isSubmitting || signUpMutation.isPending ? '처리 중...' : '회원가입'}
       </button>
 
+      {/* NOTE: 회원가입 실패 시 하단에 에러 메시지 출력 */}
       {signUpMutation.isError && (
         <div className="text-sm text-red-500 text-center">
           {signUpMutation.error?.message || '회원가입에 실패했습니다.'}

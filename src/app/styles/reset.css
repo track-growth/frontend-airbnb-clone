@@ -1,3 +1,7 @@
+/** 
+ * @description reset.css는 개발 편의성을 위해 브라우저의 기본 스타일을 초기화하는 스타일시트입니다.
+ */
+
 /* NOTE: box-sizing 규칙을 명시 */
 *,
 *::before,

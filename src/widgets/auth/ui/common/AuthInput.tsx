@@ -1,15 +1,21 @@
 /**
  * @file AuthInput.tsx
  * @description 회원가입/로그인 form 내 email, password, confirmPassword 공통 input 컴포넌트
+ * @props
+ * - label: input 상단 라벨 (이름, 이메일, 비밀번호 등)
+ * - type: input 타입
+ * - placeholder: input placeholder
+ * - error: form 유효성 검사 오류 메시지
+ * - ...props: input 추가 속성 (name, value, onChange, onBlur 등)
  */
 
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 
 interface AuthInputProps {
-  label: string;
-  type: string;
-  placeholder: string;
-  error?: string;
+  label: string
+  type: string
+  placeholder: string
+  error?: string
 }
 
 export const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
@@ -28,8 +34,8 @@ export const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
         />
         {error && <span className="text-sm text-red-500">{error}</span>}
       </div>
-    );
+    )
   },
-);
+)
 
-AuthInput.displayName = 'AuthInput';
+AuthInput.displayName = 'AuthInput'

@@ -1,3 +1,7 @@
+/**
+ * @description 404 오류 페이지 UI
+ */
+
 import { Link } from 'react-router-dom'
 
 export const NotFoundErrorPage = () => {

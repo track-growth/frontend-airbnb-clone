@@ -1,5 +1,10 @@
+/**
+ * @description Tailwind CSS를 사용하여 전역적인 스타일을 적용하는 스타일시트입니다.
+ */
+
 @import 'tailwindcss';
 
 body {
+  /* NOTE: 폰트 기본값을 'Noto Sans KR', sans-serif로 설정합니다. */
   font-family: 'Noto Sans KR', sans-serif;
 }
