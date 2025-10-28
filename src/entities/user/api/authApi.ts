@@ -5,7 +5,7 @@
  */
 
 // entities layers
-import type { SignUpRequest, SignUpResponse } from '../model'
+import type { SignUpRequest, SignUpResponse, LoginRequest, LoginResponse } from '../model'
 // shared layers
 import { axiosInstance } from '@/shared'
 
@@ -14,7 +14,11 @@ export const authApi = {
     const response = await axiosInstance.post('/api/members/signup', data)
     return response.data
   },
-  // TODO: login API 추가
+  // NOTE: 로그인 API
   // - props(data) type으로 email, password를 받는다.
   // - axiosInstance를 사용하여 API 호출
+  login: async (data: LoginRequest): Promise<LoginResponse> => {
+    const response = await axiosInstance.post('/api/members/login', data)
+    return response.data
+  },
 }

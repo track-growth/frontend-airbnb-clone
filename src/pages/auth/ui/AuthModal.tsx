@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { SignUpForm } from '@/widgets';
+import { SignUpForm, LoginForm } from '@/widgets';
 
 export const AuthModal = ({ isOpen, close }: { isOpen: boolean; close: () => void }) => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -35,7 +35,11 @@ export const AuthModal = ({ isOpen, close }: { isOpen: boolean; close: () => voi
           <section>
             <h3 className="text-xl font-semibold">에어비앤비에 오신 것을 환영합니다</h3>
 
-            <SignUpForm closeModalFn={close} />
+            {isSignUp ? (
+              <SignUpForm closeModalFn={close} />
+            ) : (
+              <LoginForm closeModalFn={close} />
+            )}
           </section>
 
           {/* NOTE: 하단 로그인/회원가입 이동 버튼 */}
