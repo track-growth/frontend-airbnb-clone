@@ -7,9 +7,10 @@ import { z } from 'zod';
 
 // NOTE: 로그인 form zod schema
 export const loginSchema = z.object({
-  email: z.email('올바른 이메일 형식을 입력해주세요'),
+  email: z.string().trim().email('올바른 이메일 형식을 입력해주세요'),
   password: z
     .string()
+    .trim()
     .min(1, '비밀번호를 입력해주세요'),
 });
 
