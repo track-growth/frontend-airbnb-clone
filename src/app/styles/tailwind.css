@@ -8,3 +8,13 @@ body {
   /* NOTE: 폰트 기본값을 'Noto Sans KR', sans-serif로 설정합니다. */
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+/* NOTE: 스크롤바 숨김 유틸리티 */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

@@ -1,3 +1,3 @@
 export { AuthModal } from './auth';
-export { HomePage } from './home';
+export { MainPage } from './main';
 export { NotFoundErrorPage } from './error';
