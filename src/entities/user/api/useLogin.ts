@@ -14,8 +14,8 @@ import type { ApiError } from '@/shared'
 export const useLogin = () => {
   const loginMutation = useMutation<LoginResponse, ApiError, LoginRequest>({
     mutationFn: authApi.login,
-    onSuccess: (data) => {
-      console.log('로그인 성공:', data)
+    onSuccess: (loginResponse) => {
+      console.log('로그인 성공:', loginResponse)
     },
     onError: (error) => {
       console.error('로그인 실패:', error.message)

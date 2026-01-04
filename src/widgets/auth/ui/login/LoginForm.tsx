@@ -26,7 +26,7 @@ export const LoginForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
 
   return (
     <form
-      onSubmit={handleSubmit(data => onSubmitLoginForm(data, closeModalFn))}
+      onSubmit={handleSubmit((formData) => onSubmitLoginForm(formData, closeModalFn))}
       className="flex flex-col gap-4 mt-6"
     >
       <AuthInput

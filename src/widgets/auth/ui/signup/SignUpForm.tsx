@@ -29,10 +29,10 @@ export const SignUpForm = ({ closeModalFn }: { closeModalFn: () => void }) => {
   const { signUpMutation, onSubmitSignUpForm } = useSignUp();
 
   return (
-    // NOTE: form 제출 시 onSubmitSignUpForm 함수 호출 (useForm의 handleSubmit 함수 props로 받은 data를 전달)
-    // - data: form 제출 시 입력된 데이터
+    // NOTE: form 제출 시 onSubmitSignUpForm 함수 호출 (useForm의 handleSubmit 함수 props로 받은 formData를 전달)
+    // - formData: form 제출 시 입력된 데이터
     <form
-      onSubmit={handleSubmit(data => onSubmitSignUpForm(data, closeModalFn))}
+      onSubmit={handleSubmit((formData) => onSubmitSignUpForm(formData, closeModalFn))}
       className="flex flex-col gap-4 mt-6"
     >
       <AuthInput

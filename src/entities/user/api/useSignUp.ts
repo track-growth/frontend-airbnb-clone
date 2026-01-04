@@ -14,10 +14,10 @@ import type { ApiError } from '@/shared';
 export const useSignUp = () => {
   const signUpMutation = useMutation<SignUpResponse, ApiError, SignUpRequest>({
     mutationFn: authApi.signUp,
-    onSuccess: data => {
-      console.log('회원가입 성공:', data.message);
+    onSuccess: (signUpResponse) => {
+      console.log('회원가입 성공:', signUpResponse.message);
     },
-    onError: error => {
+    onError: (error) => {
       console.error('회원가입 실패:', error.message);
     },
   });
