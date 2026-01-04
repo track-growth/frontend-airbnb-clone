@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // app layers
 import { AppLayout } from '../layout'
 // pages layers
-import { MainPage } from '@/pages'
+import { HomePage } from '@/pages'
 import { NotFoundErrorPage } from '@/pages'
 
 export const AppRouter = () => {
@@ -16,7 +16,7 @@ export const AppRouter = () => {
     {
       path: '/',
       element: <AppLayout />,
-      children: [{ path: '/', element: <MainPage /> }],
+      children: [{ path: '/', element: <HomePage /> }],
       // NOTE: 오류 발생 시 렌더링할 컴포넌트
       errorElement: <NotFoundErrorPage />,
     },

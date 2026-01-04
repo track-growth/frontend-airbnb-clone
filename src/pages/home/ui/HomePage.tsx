@@ -1,12 +1,12 @@
 /**
- * @description 메인페이지 UI (페이지 진입 시 메인 화면)
+ * @description 홈페이지 UI (페이지 진입 시 홈 화면)
  * - 숙소 리스트 표시
  */
 
 import { useRooms } from '@/entities/room';
 import { RoomCarousel } from '@/widgets/room';
 
-export const MainPage = () => {
+export const HomePage = () => {
   const { data, isLoading, isError } = useRooms();
 
   if (isLoading) {
