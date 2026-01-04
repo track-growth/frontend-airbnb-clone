@@ -5,13 +5,13 @@
 
 import { useRef, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import type { RoomResponse } from '@/entities/room';
+import type { RoomListItem } from '@/entities/room';
 import { RoomCard } from './RoomCard';
 import './roomCarousel.css';
 
 interface RoomCarouselProps {
   title: string;
-  rooms: RoomResponse[];
+  rooms: RoomListItem[];
   checkInDate?: string; // 응답값의 체크인 날짜
   checkOutDate?: string; // 응답값의 체크아웃 날짜
   nights?: number; // 선택 가능한? 숙박 일수

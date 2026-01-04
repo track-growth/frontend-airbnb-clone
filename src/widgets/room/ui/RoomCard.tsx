@@ -5,10 +5,10 @@
 
 import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
-import type { RoomResponse } from '@/entities/room';
+import type { RoomListItem } from '@/entities/room';
 
 interface RoomCardProps {
-  room: RoomResponse;
+  room: RoomListItem;
   checkInDate?: string; // 응답값의 체크인 날짜 (예: "2025-11-20")
   checkOutDate?: string; // 응답값의 체크아웃 날짜 (예: "2025-11-22")
   nights?: number; // 선택 가능한 숙박 일수
@@ -26,14 +26,6 @@ export const RoomCard = ({ room, checkInDate, checkOutDate, nights }: RoomCardPr
     return `${d.getMonth() + 1}월 ${d.getDate()}일`;
   };
 
-  const formatTime = (time: string) => {
-    // TIME 형식 (예: "15:00:00")을 "오후 3시" 형식으로 변환
-    const [hours] = time.split(':');
-    const hour = parseInt(hours, 10);
-    const period = hour >= 12 ? '오후' : '오전';
-    const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
-    return `${period} ${displayHour}시`;
-  };
 
   return (
     <div className="flex-shrink-0 w-[220px] cursor-pointer group">
@@ -72,7 +64,7 @@ export const RoomCard = ({ room, checkInDate, checkOutDate, nights }: RoomCardPr
           <p className="text-sm text-gray-600 mt-1">
             {checkInDate && checkOutDate
               ? `${formatDate(checkInDate)}~${formatDate(checkOutDate)}`
-              : `체크인: ${formatTime(room.checkInTime)} · 체크아웃: ${formatTime(room.checkOutTime)}`}
+              : '날짜를 선택해주세요'}
           </p>
           <div className="flex items-center gap-1 mt-2">
             <span className="font-semibold text-gray-900">

@@ -25,8 +25,20 @@ export interface RoomResponse extends Room {
   isGuestFavorite?: boolean; // 게스트 선호 여부 (계산된 값)
 }
 
+// NOTE: 메인 화면 숙소 목록 API 응답 타입 (실제 사용하는 필드만 포함)
+export interface RoomListItem {
+  roomID: number;
+  roomName: string;
+  roomAddress: string;
+  roomPrice: number; // 1박당 비용
+  imageUrl?: string; // 이미지 URL
+  rating?: number; // 평점
+  isGuestFavorite?: boolean; // 게스트 선호 여부
+}
+
 export interface RoomListResponse {
-  rooms: RoomResponse[];
+  rooms: RoomListItem[];
   total: number;
 }
+
 
