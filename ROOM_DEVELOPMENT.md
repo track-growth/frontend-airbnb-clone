@@ -20,7 +20,8 @@
 - 환경 변수 기반 Mock 데이터 사용 로직 구현 (VITE_USE_MOCK_DATA 또는 VITE_API_BASE_URL 설정에 따라 자동 전환)
 
 ### RoomCard 컴포넌트 구현
-- 숙소 이미지 표시 (220px × 220px, 호버 시 확대 효과)
+- 숙소 이미지 표시 (13.75rem × 13.75rem, 호버 시 확대 효과)
+- Tailwind config에 room-card 크기 상수 정의 (디자인 시스템 연계)
 - 게스트 선호 배지 표시 (isGuestFavorite가 true일 때)
 - 좋아요 기능 (하트 아이콘 클릭 시 상태 변경)
 - 숙소 정보 표시:
@@ -48,7 +49,8 @@
 
 ### 스타일링
 - Tailwind CSS를 사용한 반응형 디자인
-- 카드 크기: 220px 너비, 220px 높이 이미지
+- 카드 크기: 13.75rem 너비, 13.75rem 높이 이미지 (rem 단위 사용)
+- Tailwind config에 room-card 크기 상수 정의로 유지보수성 향상
 - 호버 효과: 이미지 확대 애니메이션 (scale-105)
 - 숙박 정보 레이아웃: 왼쪽 정렬 및 적절한 간격 조정
 

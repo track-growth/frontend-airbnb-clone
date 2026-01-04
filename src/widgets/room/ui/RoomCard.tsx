@@ -28,10 +28,10 @@ export const RoomCard = ({ room, checkInDate, checkOutDate, nights }: RoomCardPr
 
 
   return (
-    <div className="flex-shrink-0 w-[220px] cursor-pointer group">
+    <div className="flex-shrink-0 w-room-card cursor-pointer group">
       <div className="relative">
         {/* NOTE: 숙소 이미지 */}
-        <div className="relative w-full h-[220px] rounded-2xl overflow-hidden">
+        <div className="relative w-full h-room-card rounded-2xl overflow-hidden">
           <img
             src={room.imageUrl || 'https://via.placeholder.com/800x600'}
             alt={room.roomName}

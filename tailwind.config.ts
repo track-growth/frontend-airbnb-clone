@@ -10,6 +10,10 @@ export default {
       fontFamily: {
         NotoSansKR: ['NotoSansKR'],
       },
+      // NOTE: RoomCard 이미지 크기 (220px = 13.75rem)
+      spacing: {
+        'room-card': '13.75rem', // 220px
+      },
     },
   },
   plugins: [],
