@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import type { RoomResponse } from '@/entities/room';
 import { RoomCard } from './RoomCard';
+import './roomCarousel.css';
 
 interface RoomCarouselProps {
   title: string;
@@ -110,4 +111,5 @@ export const RoomCarousel = ({
     </section>
   );
 };
+
 
