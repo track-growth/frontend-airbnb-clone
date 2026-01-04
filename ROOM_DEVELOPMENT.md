@@ -62,7 +62,7 @@
 
 ### API 엔드포인트
 - 실제 API 사용 시: `GET /api/rooms`
-- 응답 형식: `{ rooms: RoomResponse[], total: number }`
+- 응답 형식: `RoomListItem[]` (rooms 배열만 반환, total은 제거하여 depth 감소 및 가독성 향상)
 
 ### 컴포넌트 사용 예시
 ```tsx

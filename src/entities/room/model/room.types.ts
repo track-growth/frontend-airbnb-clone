@@ -36,9 +36,7 @@ export interface RoomListItem {
   isGuestFavorite?: boolean; // 게스트 선호 여부
 }
 
-export interface RoomListResponse {
-  rooms: RoomListItem[];
-  total: number;
-}
+// NOTE: 메인 화면 숙소 목록 API 응답 타입 (rooms 배열만 반환)
+export type RoomListResponse = RoomListItem[];
 
 

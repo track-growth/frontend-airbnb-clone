@@ -48,7 +48,7 @@ export const HomePage = () => {
     <div className="container mx-auto px-4 py-8">
       <RoomCarousel
         title="서울의 인기 숙소"
-        rooms={data.rooms}
+        rooms={data}
         checkInDate={checkInDate}
         checkOutDate={checkOutDate}
         nights={nights}
