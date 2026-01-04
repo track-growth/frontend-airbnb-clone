@@ -19,7 +19,7 @@ export const AuthModal = ({ isOpen, close }: { isOpen: boolean; close: () => voi
       >
         <article
           className="bg-white rounded-4xl shadow-xl w-full max-w-md p-6"
-          onClick={e => e.stopPropagation()}
+          onClick={(event) => event.stopPropagation()}
         >
           {/* NOTE: 상단 닫기 버튼, 타이틀 */}
           <header className="flex items-center mb-7">

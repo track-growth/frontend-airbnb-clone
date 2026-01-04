@@ -22,8 +22,8 @@ export const RoomCard = ({ room, checkInDate, checkOutDate, nights }: RoomCardPr
   };
 
   const formatDate = (date: string) => {
-    const d = new Date(date);
-    return `${d.getMonth() + 1}월 ${d.getDate()}일`;
+    const dateObj = new Date(date);
+    return `${dateObj.getMonth() + 1}월 ${dateObj.getDate()}일`;
   };
 
 
@@ -47,8 +47,8 @@ export const RoomCard = ({ room, checkInDate, checkOutDate, nights }: RoomCardPr
 
           {/* NOTE: 하트 아이콘 (좋아요) */}
           <button
-            onClick={(e) => {
-              e.stopPropagation();
+            onClick={(event) => {
+              event.stopPropagation();
               setIsLiked(!isLiked);
             }}
             className="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
